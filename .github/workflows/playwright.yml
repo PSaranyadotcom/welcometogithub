@@ -40,7 +40,7 @@ jobs:
         run: npx playwright --version
 
       - name: Run Playwright UI Test
-        run: npx playwright test tests/UploadFiles/UploadFiles.spec.js --config=playwright.config.js --project=chromium --debug
+        run: npx playwright test trello.spec.ts
 
       - name: Generate Allure Report
         run: |
