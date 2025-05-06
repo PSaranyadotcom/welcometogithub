@@ -1,0 +1,21 @@
+{
+  "name": "myfiles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.3"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mailisk": "^2.0.1",
+    "mailslurp-client": "^15.21.0"
+  }
+}

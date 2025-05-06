@@ -1,0 +1,9 @@
+{
+  id: '67c9a5c9bb1d1868e16d9e79',
+  name: 'saranya4',
+  closed: false,
+  color: null,
+  idBoard: '67c9a4eeb7ea5fcb332cb47b',
+  pos: 8192
+}
+200

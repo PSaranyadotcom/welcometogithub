@@ -1,0 +1,54 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: has title
+- Location: C:\Users\sharanyap\MyFiles\tests\multiselect.spec.ts:3:5
+
+# Error details
+
+```
+Error: expect(received).toBeTruthy()
+
+Received: false
+    at C:\Users\sharanyap\MyFiles\tests\multiselect.spec.ts:10:44
+```
+
+# Test source
+
+```ts
+   1 | import { test,expect } from '@playwright/test';
+   2 |
+   3 | test('has title', async ({ page }) => {
+   4 |     await page.goto("https://techcanvass.com/Examples/multi-select.html?srsltid=AfmBOoqVF-TIx7fEI_p97IIj8P1dvAkNUN--KBUSSHjzq5RlFN9f07p1");
+   5 |     // await page.locator("#multiselect").selectOption(['Volvo','Audi'])
+   6 |     const text=await page.locator("#multiselect")
+   7 |     const cmp=await page.locator("#multiselect").textContent()
+   8 |     const optionname=await page.locator("#multiselect option")
+   9 |     expect(await cmp?.includes("Hond")).toBeTruthy()
+> 10 |     expect.soft(await cmp?.includes("Hi")).toBeTruthy()
+     |                                            ^ Error: expect(received).toBeTruthy()
+  11 |     const options = await text.locator("option").all();
+  12 |     expect(options.length).toBe(6)
+  13 |     await expect(optionname).toHaveCount(6)
+  14 |     for(let name of options){
+  15 |         const names=await name.textContent();
+  16 | console.log(names)
+  17 |     
+  18 |     if(names?.includes('Opel') ||names?.includes("Hyundai")){
+  19 |         await text.selectOption(names);
+  20 |         // await name.click()
+  21 |     }
+  22 |     }
+  23 |     await page.waitForTimeout(8000);
+  24 |     await page.close();
+  25 |    
+  26 |
+  27 | })
+  28 |
+  29 |
+```
